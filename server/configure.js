@@ -1,6 +1,6 @@
 var connect = require('connect'),
     path = require('path'),
-   	//routes = require('./routes'),
+   	routes = require('./routes'),
    	exphbs = require('express3-handlebars'),
    	bodyParser = require('body-parser'),
    	morgan = require('morgan'),
@@ -35,12 +35,14 @@ module.exports = function(app) {
 	app.use(cookieParser('some-secret-value-here'));
 
 	app.use(app.router);
-	
+
 	app.use('/public/', serveStatic(path.join(__dirname, '../public')));
 
 	if ('development' === app.get('env')) {
 		app.use(errorHandler());
 	}
+
+	routes.initialize(app);
 
 	return app;
 }
