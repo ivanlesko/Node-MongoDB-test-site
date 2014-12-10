@@ -1,7 +1,7 @@
-var connect = require('connect'),
-    path = require('path'),
+var path = require('path'),
    	routes = require('./routes'),
    	exphbs = require('express3-handlebars'),
+   	express = require('express'),
    	bodyParser = require('body-parser'),
    	morgan = require('morgan'),
    	methodOverride = require('method-override'),
@@ -25,18 +25,19 @@ module.exports = function(app) {
 	app.use(bodyParser({
 		uploadDir:path.join(__dirname, '../public/upload/temp')
 	}));
-	app.use(bodyParser.json());
-	app.use(bodyParser.urlencoded({
-		extended: true
-	}));
+
+	// app.use(bodyParser.json());
+	// app.use(bodyParser.urlencoded({
+	// 	extended: true
+	// }));
 
 	app.use(methodOverride());
 
 	app.use(cookieParser('some-secret-value-here'));
 
-	app.use(app.router);
+	routes.initialize(app, new express.Router());
 
-	app.use('/public/', serveStatic(path.join(__dirname, '../public')));
+	app.use('/public/', express.static(path.join(__dirname, '../public')));
 
 	if ('development' === app.get('env')) {
 		app.use(errorHandler());
