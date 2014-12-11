@@ -27,11 +27,13 @@ module.exports = function(app) {
     app.set('view engine', 'handlebars');
 
 	app.use(morgan('dev'));
-	app.use(bodyParser({
-		uploadDir:path.join(__dirname, '../public/upload/temp')
+	app.use(bodyParser.urlencoded({
+		uploadDir:path.join(__dirname, '../public/upload/temp'),
+		extended:true
 	}));
 
 	app.use(methodOverride());
+	app.use(express.multipart());
 	app.use(cookieParser('some-secret-value-here'));
 	app.use('/public/', express.static(path.join(__dirname, '../public')));
 

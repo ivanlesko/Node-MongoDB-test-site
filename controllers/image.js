@@ -35,35 +35,37 @@ module.exports = {
 	},
 
 	create: function(req, res) {
-		var saveImage = function(){
-			var possible = 'abcdefghijklmnopqrstuvwxyz0123456789',
-				imgURL = '';
+        var saveImage = function() {
+            var possible = 'abcdefghijklmnopqrstuvwxyz0123456789',
+                imgUrl = '';
 
-			for (var i=0; i < 6; i++){
-				imgURL += possible.charAt(Math.floor(Math.random() * possible.length));
-			}
+            for(var i=0; i < 6; i+=1) {
+                imgUrl += possible.charAt(Math.floor(Math.random() * possible.length));
+            }
 
-			var tempPath = req.files.file.path,
-				ext = path.extname(req.files.file.name).toLowerCase(),
-				targetPath = path.resolve('./public/upload' + imgURL + ext);
+            var tempPath = req.files.file.path,
+                ext = path.extname(req.files.file.name).toLowerCase(),
+                targetPath = path.resolve('./public/upload/' + imgUrl + ext);
 
-			if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif') {
-				fs.rename(tempPath, targetPath, function(err) {
-					if (error) throw err;
-					
-					res.redirect('/images/99');
-				});
-			} else {
-				fs.unlink(tempPath, function() {
-					if (err) throw err;
+            console.log("temp path: " + tempPath);
 
-					res.json(500, {error: 'Only image files are allowed'});
-				});
-			}
-		};
+            if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif') {
+                fs.rename(tempPath, targetPath, function(err) {
+                    if (err) throw err;
 
-		saveImage();
-	},
+                    res.redirect('/images/' + imgUrl);
+                });
+            } else {
+                fs.unlink(tempPath, function () {
+                    if (err) throw err;
+
+                    res.json(500, {error: 'Only image files are allowed.'});
+                });
+            }
+        };
+
+        saveImage();
+    },
 
 	like: function(req, res) {
 		res.send('The image:like POST controller');
