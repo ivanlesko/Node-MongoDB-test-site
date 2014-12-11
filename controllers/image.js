@@ -1,6 +1,34 @@
 module.exports = {
 	index: function(req, res) {
-		res.render('image');
+		var viewModel = {
+			uniqueId: 1,
+			title: 'Sample Image 1',
+			description: '',
+			filename: 'sample1.jpg',
+			views: 0,
+			likes: 0,
+			timestamp: Date.now,
+			comments: [
+				{
+					image_id: 1,
+					email: 'test@testing.com',
+					name: 'Test Tester',
+					gravatar: 'https://avatars1.githubusercontent.com/u/5688184?v=3&s=75',
+					comment: 'This is a test comment',
+					timestamp: Date.now()
+				},
+				{
+					image_id: 1,
+					email: 'test@testing.com',
+					name: 'Test Tester',
+					gravatar: 'https://avatars0.githubusercontent.com/u/6786014?v=3&s=75',
+					comment: 'I really like the converging lines of this photo.',
+					timestamp: Date.now()
+				}
+			]
+		};
+
+		res.render('image', viewModel);
 	},
 
 	create: function(req, res) {

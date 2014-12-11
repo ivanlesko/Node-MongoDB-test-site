@@ -1,99 +1,26 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'express-handlebars' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.33
-4 warn package.json 20141210_Site@1.0.0 No description
-5 warn package.json 20141210_Site@1.0.0 No repository field.
-6 warn package.json 20141210_Site@1.0.0 No README data
-7 verbose readDependencies using package.json deps
-8 verbose cache add [ 'express-handlebars@^0.5.2', null ]
-9 verbose cache add name=undefined spec="express-handlebars@^0.5.2" args=["express-handlebars@^0.5.2",null]
-10 verbose parsed url { protocol: null,
-10 verbose parsed url   slashes: null,
-10 verbose parsed url   auth: null,
-10 verbose parsed url   host: null,
-10 verbose parsed url   port: null,
-10 verbose parsed url   hostname: null,
-10 verbose parsed url   hash: null,
-10 verbose parsed url   search: null,
-10 verbose parsed url   query: null,
-10 verbose parsed url   pathname: 'express-handlebars@^0.5.2',
-10 verbose parsed url   path: 'express-handlebars@^0.5.2',
-10 verbose parsed url   href: 'express-handlebars@^0.5.2' }
-11 verbose cache add name="express-handlebars" spec="^0.5.2" args=["express-handlebars","^0.5.2"]
-12 verbose parsed url { protocol: null,
-12 verbose parsed url   slashes: null,
-12 verbose parsed url   auth: null,
-12 verbose parsed url   host: null,
-12 verbose parsed url   port: null,
-12 verbose parsed url   hostname: null,
-12 verbose parsed url   hash: null,
-12 verbose parsed url   search: null,
-12 verbose parsed url   query: null,
-12 verbose parsed url   pathname: '^0.5.2',
-12 verbose parsed url   path: '^0.5.2',
-12 verbose parsed url   href: '^0.5.2' }
-13 verbose addNamed [ 'express-handlebars', '^0.5.2' ]
-14 verbose addNamed [ null, '>=0.5.2-0 <0.6.0-0' ]
-15 silly lockFile 281e570a-express-handlebars-0-5-2 express-handlebars@^0.5.2
-16 verbose lock express-handlebars@^0.5.2 /Users/ivanlesko/.npm/281e570a-express-handlebars-0-5-2.lock
-17 silly addNameRange { name: 'express-handlebars',
-17 silly addNameRange   range: '>=0.5.2-0 <0.6.0-0',
-17 silly addNameRange   hasData: false }
-18 verbose request where is /express-handlebars
-19 verbose request registry https://registry.npmjs.org/
-20 verbose request id 9eb1c45caa3f9d88
-21 verbose url raw /express-handlebars
-22 verbose url resolving [ 'https://registry.npmjs.org/', './express-handlebars' ]
-23 verbose url resolved https://registry.npmjs.org/express-handlebars
-24 verbose request where is https://registry.npmjs.org/express-handlebars
-25 info trying registry request attempt 1 at 08:18:54
-26 verbose etag "4BNLGSUQC3Z2LLR0TKS55RE9R"
-27 http GET https://registry.npmjs.org/express-handlebars
-28 http 304 https://registry.npmjs.org/express-handlebars
-29 silly registry.get cb [ 304,
-29 silly registry.get   { date: 'Thu, 11 Dec 2014 16:18:54 GMT',
-29 silly registry.get     server: 'Apache',
-29 silly registry.get     via: '1.1 varnish',
-29 silly registry.get     'last-modified': 'Thu, 11 Dec 2014 16:18:54 GMT',
-29 silly registry.get     'cache-control': 'max-age=60',
-29 silly registry.get     etag: '"4BNLGSUQC3Z2LLR0TKS55RE9R"',
-29 silly registry.get     age: '0',
-29 silly registry.get     'x-served-by': 'cache-lax1432-LAX',
-29 silly registry.get     'x-cache': 'MISS',
-29 silly registry.get     'x-cache-hits': '0',
-29 silly registry.get     'x-timer': 'S1418314734.699223,VS0,VE73',
-29 silly registry.get     vary: 'Accept',
-29 silly registry.get     'content-length': '0',
-29 silly registry.get     'keep-alive': 'timeout=10, max=50',
-29 silly registry.get     connection: 'Keep-Alive' } ]
-30 verbose etag https://registry.npmjs.org/express-handlebars from cache
-31 silly addNameRange number 2 { name: 'express-handlebars',
-31 silly addNameRange   range: '>=0.5.2-0 <0.6.0-0',
-31 silly addNameRange   hasData: true }
-32 silly addNameRange versions [ 'express-handlebars',
-32 silly addNameRange   [ '0.0.1',
-32 silly addNameRange     '0.0.2',
-32 silly addNameRange     '1.0.0-rc-1',
-32 silly addNameRange     '1.0.0-rc-2',
-32 silly addNameRange     '1.0.0',
-32 silly addNameRange     '1.0.1',
-32 silly addNameRange     '1.0.2',
-32 silly addNameRange     '1.0.3',
-32 silly addNameRange     '1.1.0' ] ]
-33 silly lockFile 281e570a-express-handlebars-0-5-2 express-handlebars@^0.5.2
-34 silly lockFile 281e570a-express-handlebars-0-5-2 express-handlebars@^0.5.2
-35 error notarget No compatible version found: express-handlebars@'>=0.5.2-0 <0.6.0-0'
-35 error notarget Valid install targets:
-35 error notarget ["0.0.1","0.0.2","1.0.0-rc-1","1.0.0-rc-2","1.0.0","1.0.1","1.0.2","1.0.3","1.1.0"]
-35 error notarget
-35 error notarget This is most likely not a problem with npm itself.
-35 error notarget In most cases you or one of your dependencies are requesting
-35 error notarget a package version that doesn't exist.
-36 error System Darwin 13.3.0
-37 error command "node" "/usr/local/bin/npm" "install" "express-handlebars"
-38 error cwd /Users/ivanlesko/Documents/Node Tutorials/20141210_Site
-39 error node -v v0.10.33
-40 error npm -v 1.4.28
-41 error code ETARGET
-42 verbose exit [ 1, true ]
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info prestart 20141210_Site@1.0.0
+6 info start 20141210_Site@1.0.0
+7 verbose unsafe-perm in lifecycle true
+8 info 20141210_Site@1.0.0 Failed to exec start script
+9 error 20141210_Site@1.0.0 start: `node server.js`
+9 error Exit status 8
+10 error Failed at the 20141210_Site@1.0.0 start script.
+10 error This is most likely a problem with the 20141210_Site package,
+10 error not with npm itself.
+10 error Tell the author that this fails on your system:
+10 error     node server.js
+10 error You can get their info via:
+10 error     npm owner ls 20141210_Site
+10 error There is likely additional logging output above.
+11 error System Darwin 13.3.0
+12 error command "node" "/usr/local/bin/npm" "start"
+13 error cwd /Users/ivanlesko/Documents/Node Tutorials/20141210_Site
+14 error node -v v0.10.33
+15 error npm -v 1.4.28
+16 error code ELIFECYCLE
+17 verbose exit [ 1, true ]
