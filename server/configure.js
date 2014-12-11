@@ -1,6 +1,6 @@
 var path = require('path'),
    	routes = require('./routes'),
-   	exphbs = require('express3-handlebars'),
+   	exphbs = require('express-handlebars'),
    	express = require('express'),
    	bodyParser = require('body-parser'),
    	morgan = require('morgan'),
