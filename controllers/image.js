@@ -1,3 +1,5 @@
+var sidebar = require('../helpers/sidebar');
+
 var fs = require('fs'),
 	path = require('path');
 
@@ -31,7 +33,9 @@ module.exports = {
 			]
 		};
 
-		res.render('image', viewModel);
+		sidebar(viewModel, function(viewModel){
+			res.render('image', viewModel);
+		});
 	},
 
 	create: function(req, res) {
