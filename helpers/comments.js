@@ -1,5 +1,5 @@
 module.exports = {
-	newest: function(){
+	newest: function() {
 		var comments = [
 			{
 				image_id: 1,
@@ -38,5 +38,5 @@ module.exports = {
 		];
 
 		return comments;
-	};
+	}
 };

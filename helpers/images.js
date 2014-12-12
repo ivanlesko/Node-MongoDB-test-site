@@ -38,9 +38,9 @@ module.exports = {
 				timestamp: Date.now
 			}
 		];
-	};
-
+		
 	return images;
+	}
 };
 
 
